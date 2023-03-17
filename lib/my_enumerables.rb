@@ -8,4 +8,12 @@ end
 # to this method
 class Array
   # Define my_each here
+  def my_each(&a_block)
+    if block_given?
+      for element in self do
+        yield element
+      end
+    end
+    self
+  end
 end
