@@ -1,5 +1,13 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index
+    if block_given?
+      for index in 0..self.length-1 do
+        yield(self[index], index)
+      end
+    end
+    self
+  end
 end
 
 # You will first have to define my_each
@@ -8,7 +16,7 @@ end
 # to this method
 class Array
   # Define my_each here
-  def my_each(&a_block)
+  def my_each
     if block_given?
       for element in self do
         yield element
