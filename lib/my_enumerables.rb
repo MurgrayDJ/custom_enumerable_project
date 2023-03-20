@@ -43,6 +43,12 @@ module Enumerable
     end
     count
   end
+
+  def my_map
+    results = []
+    my_each {|element| results.push(yield element)}
+    results
+  end
 end
 
 # You will first have to define my_each
